@@ -38,7 +38,7 @@
                 <strong></strong>
               </p>
 
-              <a target="_blank" href="#" class="btn btn-outline-white btn-lg">Login To Buy
+              <a href="/sign-up/" class="btn btn-outline-white btn-lg">{% if user.is_authenticated %} Scroll to buy{%else%}Login To Buy {%endif%}
                 <i class="fas fa-graduation-cap ml-2"></i>
               </a>
             </div>
@@ -72,7 +72,7 @@
                 <strong></strong>
               </p>
 
-              <a target="_blank" href="#" class="btn btn-outline-white btn-lg">Start
+              <a target="_blank" href="/tribal-home/" class="btn btn-outline-white btn-lg">Start
                 Selling
                 <i class="fas fa-graduation-cap ml-2"></i>
               </a>
@@ -107,9 +107,9 @@
                 <strong></strong>
               </p>
 
-              <a target="_blank" href="#" class="btn btn-outline-white btn-lg">Dive In
+              <span class="btn btn-outline-white btn-lg">Dive In
                 <i class="fas fa-graduation-cap ml-2"></i>
-              </a>
+              </span>
             </div>
             <!-- Content -->
 
