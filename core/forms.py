@@ -1,3 +1,4 @@
+from core.models import Item
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
@@ -39,3 +40,7 @@ class CheckoutForm(forms.Form):
     }))
     same_billing_address = forms.BooleanField(required=False)
     save_info = forms.BooleanField(required=False) 
+class ItemForm(forms.ModelForm):
+    class Meta:
+        model=Item
+        fields=('item_name','price','discount_price','category','label','description','photo','sellercom')

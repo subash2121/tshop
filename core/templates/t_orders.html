@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 't_base.html' %}
 
 {% block content %}
 
@@ -16,6 +16,7 @@
             <th scope="col">Quantity</th>
             <th scope="col">Order Date</th>
             <th scope="col">Price</th>
+            <th scope="col"></th>            
         </tr>
         </thead>
         <tbody>
@@ -31,35 +32,15 @@
                         {%endfor%}</td>
                 <td>{{ order_item.ordered_date }}</td>
                 <td>Rs.{{ order_item.get_total_price }}</td>
+                <td><a href="{% url 'core:t_order_val' order_item.pk %}" class="btn btn-primary float-right">View</a></td>
             </tr>
-        
 
         {% empty %}
         <tr>
-            <td colspan="5">Your Cart Empity</td>
+            <td colspan="5">No Orders till now</td>
         </tr>
-
-         <tr>
-            <td colspan="5">
-                <a href="/" class="btn btn-primary float-right">Continue Shopping</a>
-            </td>
-        </tr>
-
         {% endfor %}
 
-        {% if object.get_total_price %}
-        <tr>
-            <td colspan="4"><b>Total Order Price</b></td>
-            <td>${{ object.get_total_price }}</td>
-        </tr>
-         <tr>
-            <td colspan="5">
-                <a href="/checkout/" class="btn btn-warning float-right ml-2">Checkout</a>
-                <a href="/" class="btn btn-primary float-right">Continue Shopping</a>
-            </td>
-        </tr>
-        
-        {% endif %}
         
         </tbody>
     </table>
