@@ -305,7 +305,7 @@ def t_orders(request) :
 def t_order_val(request, pk) :
     item = get_object_or_404(Order, pk=pk )
     order=Order.objects.filter(pk=item.pk,items__item__seller=request.user)
-    print(order)
+    print(order[0].items.all()[0].quantity)
     return render(request, 't_order_page.html',{
         'order':order[0]
     })
